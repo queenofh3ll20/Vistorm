@@ -1,0 +1,20 @@
+# Usa l'immagine di Spark di Bitnami
+FROM bitnami/spark:3.4.3
+
+# Imposta la directory di lavoro nel container
+WORKDIR /app
+
+# Copia il file requirements.txt nel container
+COPY docker_images/MLlib/requirements.txt /app/
+
+# Installa 'wheel' prima di altre dipendenze
+RUN pip install --no-cache-dir wheel
+
+# Installa le librerie Python specificate nel requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copia lo script PySpark nel container
+COPY src/SparkMLlib.py /app/
+
+# Comando per eseguire lo script PySpark
+CMD ["python", "/app/SparkMLlib.py"]

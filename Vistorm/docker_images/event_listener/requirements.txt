@@ -1,0 +1,7 @@
+google-api-python-client
+pytube
+pydub
+ffmpeg-python
+requests
+python-dotenv
+yt_dlp

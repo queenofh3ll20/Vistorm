@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.VectorAssembler","timestamp":1737372547602,"sparkVersion":"3.4.3","uid":"VectorAssembler_4a70698b31f0","paramMap":{"outputCol":"features","inputCols":["total_subscribers","year","month","day_of_week","music_track"]},"defaultParamMap":{"outputCol":"VectorAssembler_4a70698b31f0__output","handleInvalid":"error"}}

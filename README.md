@@ -19,7 +19,7 @@ La piattaforma combina tecnologie all'avanguardia per trasformare intuizioni sui
 ---
 
 <div align="center">
-<img width="700" alt="Preview" src="assets\images\vistorm_pipeline.jpg">
+<img width="800" alt="Preview" src="assets\images\vistorm_pipeline.jpg">
 </div>
 
 ### Pipeline di Elaborazione dei Dati

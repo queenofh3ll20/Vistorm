@@ -7,11 +7,12 @@
 ## Descrizione del Progetto
 ---
 
-**Vistorm** è un sistema avanzato per l’analisi e la previsione della viralità degli YouTube Shorts. Utilizzando dati in tempo reale e algoritmi di machine learning, permette di:
+**Vistorm** è un sistema avanzato per l'analisi e la previsione della viralità degli YouTube Shorts. Utilizzando dati in tempo reale e algoritmi di machine learning, permette di:
 
-- Analizzare le tendenze musicali e il loro impatto sui video.
-- Identificare le caratteristiche che rendono un contenuto virale.
-- Ottimizzare le strategie di creazione di contenuti.
+- Analizzare le tendenze musicali e il loro impatto sulle performance dei video.
+- Identificare le caratteristiche chiave che contribuiscono alla viralità dei contenuti.
+- Ottimizzare le strategie di creazione dei contenuti per migliorare l'engagement.
+- Monitorare il canale visualizzando l'andamento in tempo reale e le metriche utili per prendere decisioni informate.
 
 La piattaforma combina tecnologie all'avanguardia per trasformare intuizioni sui dati in risultati concreti.
 

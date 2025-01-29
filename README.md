@@ -62,9 +62,6 @@ Visualizzazione intuitiva delle previsioni e dei trend tramite **Kibana**, con f
 
 ## 🎯 Cosa offre il progetto?
 ---
-<div align="center">
-<img width="700" alt="Preview" src="assets\images\vistorm.jpg">
-</div>
 
 Questo progetto si propone come uno strumento innovativo per _content creators_, offrendo loro la possibilità di comprendere l'impatto della musica sui loro video e monitorare il proprio canale.
 Analizzando dati chiave e prevedendo il potenziale incremento di visibilità grazie all'uso di tracce virali, consente di ottimizzare le strategie di contenuto e massimizzare il coinvolgimento del pubblico.

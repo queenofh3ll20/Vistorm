@@ -198,6 +198,11 @@ git push origin nome-branch
 
 6. **Pull Request:** Aprire una pull request verso il repository originale.
 
+## Credits
+
+- ELK Stack: Copyright © Elasticsearch B.V. and licensed under the Elastic License 2.0.
+- Apache Kafka & Apache Spark: Copyright © Apache Software Foundation, licensed under the Apache License 2.0.
+
 ## 📞 Contatti
 ---
 Grazie per aver esplorato questo progetto! 

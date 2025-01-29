@@ -1,14 +1,14 @@
 services:
-  # event_listener:
-  #   build:
-  #     context: .
-  #     dockerfile: docker_images/event_listener/Dockerfile
-  #   container_name: event_listener_g
-  #   env_file:
-  #     - ./conf/.env
-  #   volumes:
-  #     - ./data/yt_out:/app/data/yt_out
-  #   command: ["python", "/app/event_listener.py"]
+   event_listener:
+     build:
+       context: .
+       dockerfile: docker_images/event_listener/Dockerfile
+     container_name: event_listener_g
+     env_file:
+       - ./conf/.env
+     volumes:
+       - ./data/yt_out:/app/data/yt_out
+     command: ["python", "/app/event_listener.py"]
     
   broker:
     image: apache/kafka:latest
@@ -47,7 +47,7 @@ services:
       - broker
 
   logstash:
-    image: docker.elastic.co/logstash/logstash:8.17.0  # Use the latest Logstash image
+    image: docker.elastic.co/logstash/logstash:8.17.0  
     container_name: logstash_g
     environment:
       XPACK_MONITORING_ENABLED: "false"
@@ -55,9 +55,9 @@ services:
     depends_on:
       - broker
     volumes:
-      - ./conf/logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro  # Mount the Logstash config
+      - ./conf/logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro  
       - ./conf/logstash/sincedb:/conf/logstash/sincedb
-      - ./data/yt_out:/data/yt_out  # Mount the input folder
+      - ./data/yt_out:/data/yt_out  
 
   kaggle-dataset:
     build:
@@ -85,26 +85,26 @@ services:
     depends_on:
       broker:
         condition: service_healthy
-      #elasticsearch:
-      #  condition: service_healthy
-      # mllib:
-      #   condition: service_completed_successfully
+      elasticsearch:
+        condition: service_healthy
+       mllib:
+         condition: service_completed_successfully
     mem_limit: 4g
 
-  # mllib:
-  #   build:
-  #     context: .
-  #     dockerfile: docker_images/MLlib/dockerfile
-  #   container_name: MLlib
-  #   ports:
-  #     - "4041:4041"
-  #   environment:
-  #     - SPARK_DRIVER_MEMORY=2g
-  #     - SPARK_EXECUTOR_MEMORY=2g
-  #   volumes:
-  #     - ./data/dataset/:/app/data/dataset/
-  #     - ./data/Spark/:/app/data/Spark
-  #   command: ["spark-submit", "--packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.4,org.elasticsearch:elasticsearch-spark-30_2.12:8.17.0", "/app/SparkMLlib.py"]
+   mllib:
+     build:
+       context: .
+       dockerfile: docker_images/MLlib/dockerfile
+     container_name: MLlib
+     ports:
+       - "4041:4041"
+     environment:
+       - SPARK_DRIVER_MEMORY=2g
+       - SPARK_EXECUTOR_MEMORY=2g
+     volumes:
+       - ./data/dataset/:/app/data/dataset/
+       - ./data/Spark/:/app/data/Spark
+     command: ["spark-submit", "--packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.4,org.elasticsearch:elasticsearch-spark-30_2.12:8.17.0", "/app/SparkMLlib.py"]
    
 
   elasticsearch:
@@ -130,9 +130,9 @@ services:
     image: docker.elastic.co/kibana/kibana:8.17.0
     container_name: kibana_g
     environment:
-      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200  # URL di connessione a Elasticsearch
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200 
     ports:
-      - "5601:5601"  # Porta 5601 per l'accesso a Kibana
+      - "5601:5601"  
     volumes:
       - ./data/kibana:/usr/share/kibana/data
     depends_on:
